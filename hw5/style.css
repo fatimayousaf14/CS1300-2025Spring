@@ -21,9 +21,10 @@ body {
   align-items: center;
 }
 
-/* Dropdown Menu */
+/* Ensure Dropdown is Above Other Elements */
 .dropdown {
   position: relative;
+  z-index: 10; /* Ensures it's above other content */
 }
 
 .dropdown-menu {
@@ -36,26 +37,26 @@ body {
   top: 100%;
   left: 0;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 150px;
+  min-width: 200px;
+  z-index: 20; /* Makes sure it stays above other elements */
 }
 
-.dropdown-menu li {
-  padding: 8px 12px;
-}
-
-.dropdown-menu li a {
-  text-decoration: none;
-  color: #333;
+.dropdown:hover > .dropdown-menu {
   display: block;
 }
 
-.dropdown-menu li a:hover {
-  background: #f4f4f4;
+/* Fix for Nested Dropdowns */
+.dropdown-menu .dropdown {
+  position: relative;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
+.dropdown-menu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: 5px;
+  z-index: 30; /* Ensures the nested dropdown is above everything */
+  background: white; /* Ensures readability */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo {
