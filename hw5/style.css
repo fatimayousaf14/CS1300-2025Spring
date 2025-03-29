@@ -1,4 +1,3 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,7 +6,6 @@ body {
   color: #333;
 }
 
-/* Navigation */
 .navbar {
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,10 +19,9 @@ body {
   align-items: center;
 }
 
-/* Ensure Dropdown is Above Other Elements */
 .dropdown {
   position: relative;
-  z-index: 10; /* Ensures it's above other content */
+  z-index: 10;
 }
 
 .dropdown-menu {
@@ -38,14 +35,13 @@ body {
   left: 0;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 200px;
-  z-index: 20; /* Makes sure it stays above other elements */
+  z-index: 20;
 }
 
 .dropdown:hover > .dropdown-menu {
   display: block;
 }
 
-/* Fix for Nested Dropdowns */
 .dropdown-menu .dropdown {
   position: relative;
 }
@@ -54,8 +50,8 @@ body {
   top: 0;
   left: 100%;
   margin-left: 5px;
-  z-index: 30; /* Ensures the nested dropdown is above everything */
-  background: white; /* Ensures readability */
+  z-index: 30;
+  background: white;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -97,6 +93,7 @@ body {
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
+  width: auto;
   text-decoration: none;
 }
 
@@ -104,28 +101,45 @@ body {
   background: #14696e;
 }
 
-/* Hero Section */
 .hero {
-  background: url("https://via.placeholder.com/1500x600") no-repeat center
-    center/cover;
-  height: 400px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  height: 450px;
+  padding: 50px 0;
+  background: rgba(rgb(78, 117, 125), green, blue, alpha) no-repeat center/cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 82, 86, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(65, 112, 116, 0.6);
+  padding: 20px 30px;
+  border-radius: 8px;
   text-align: center;
-  padding: 20px;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .hero-content p {
-  margin: 10px 0;
+  color: #ddd;
 }
 
-/* Services */
 .services {
   padding: 50px 20px;
   text-align: center;
@@ -140,13 +154,78 @@ body {
 }
 
 .service-item {
-  background: white;
+  background: rgba(112, 143, 145, 0.524);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Contact Section */
+.slideshow-container {
+  max-width: 800px;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+  padding-top: 0;
+  height: 400px;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.active-tab > a {
+  border-bottom: 3px solid #178481;
+  padding-bottom: 4px;
+  color: #178481;
+  font-weight: bold;
+}
+
+#slide1:checked ~ .s1,
+#slide2:checked ~ .slide:nth-of-type(2) {
+  opacity: 1;
+  position: relative;
+}
+
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  bottom: 2px;
+  text-align: center;
+}
+
+.manual-btn {
+  border: 2px solid #178481;
+  padding: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 2px;
+  transition: background 0.3s ease;
+}
+
+.manual-btn:hover {
+  background: #178481;
+}
+
 .contact {
   background: #178481;
   color: white;
@@ -154,7 +233,6 @@ body {
   padding: 50px 20px;
 }
 
-/* Footer */
 .footer {
   background: #222;
   color: #aaa;
@@ -163,7 +241,6 @@ body {
   margin-top: 20px;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
   .menu {
     display: block;
