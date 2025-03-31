@@ -37,6 +37,19 @@ body {
   min-width: 200px;
   z-index: 20;
 }
+.dropdown-menu li a {
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Create the bullet */
+.dropdown-menu li a::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  color: #178481;
+  font-size: 1.2em;
+}
 
 .dropdown:hover > .dropdown-menu {
   display: block;
@@ -161,12 +174,12 @@ body {
 }
 
 .slideshow-container {
-  max-width: 800px;
+  max-width: 1800px;
   margin: 0px auto;
   position: relative;
   overflow: hidden;
   padding-top: 0;
-  height: 400px;
+  height: 700px;
 }
 
 .slides {
