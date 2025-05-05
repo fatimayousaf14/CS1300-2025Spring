@@ -1,110 +1,70 @@
-/* Global Styles */
+/* Fonts and base */
 body {
-  font-family: "Helvetica Neue", sans-serif;
   margin: 0;
-  padding: 0;
-  background: #e5e2e2;
-  color: #333;
+  font-family: "DM Sans", sans-serif;
+  background: #d3c1ba; /* Soft peach */
+  color: #123c69; /* Navy text */
   line-height: 1.6;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
 }
 
-/* Header */
-header {
-  background: #dcd6d6;
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+a:hover {
+  opacity: 0.7;
 }
 
+/* Nav + Header */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.logo {
+  padding: 1.5rem 2rem;
+  background-color: #eee2dc; /* Light beige */
   font-weight: bold;
-  font-size: 1.5rem;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  list-style: none;
 }
 
-.nav-links li a:hover {
-  color: #0077ff;
-}
-
-/* Hero */
 .hero {
-  margin-top: 2rem;
+  padding: 4rem 2rem;
+  background: #bab2b5; /* Soft gray */
+  text-align: center;
+  color: #123c69;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #666;
+  font-size: 1.25rem;
+  color: #123c69;
 }
 
-/* Projects */
-.projects-section {
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 2rem auto;
-}
-
-.project-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-}
-
-.project-card h3 {
-  margin: 1rem 1rem 0.5rem;
-}
-
-.project-card p {
-  margin: 0 1rem 1rem;
-  color: #555;
-}
-
-/* About + Contact */
+/* About Section */
 .about-section,
 .contact-section {
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
   max-width: 800px;
   margin: auto;
+  background: #eee2dc;
+  border-radius: 10px;
+}
+
+.about-section h2,
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #123c69;
 }
 
 .about-section p,
@@ -112,52 +72,75 @@ nav {
   font-size: 1.1rem;
   color: #555;
 }
-.skillset-section {
-  padding: 1rem 1rem;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
 
-.skillset-section h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.skillmap {
+/* Carousel Section */
+.carousel-track {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 2rem;
-  justify-content: center;
+  padding: 2rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
-.branch {
-  background-color: #d8d8d8;
-  border: 1px solid #ddd;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  min-width: 180px;
-  flex: 1 1 200px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+.project-slide {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: #eee2dc;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
 }
 
-.branch h3 {
-  font-size: 1.1rem;
+.project-slide:hover {
+  transform: translateY(-5px);
+  background: #cfc1bb;
+}
+
+.project-slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
   margin-bottom: 1rem;
-  color: #111;
 }
 
-.sub-branch p {
-  margin: 0.4rem 0;
+.project-slide h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-weight: 700;
+  color: #123c69;
+}
+
+.project-slide p {
+  margin: 0;
   font-size: 0.95rem;
-  color: #444;
+  color: #555;
+}
+.linkedin-button {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+}
+
+.linkedin-logo {
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.3s ease;
+}
+
+.linkedin-logo:hover {
+  opacity: 0.7;
 }
 
 /* Footer */
 footer {
-  background: #f2f2f2;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
+  background-color: #a9818f; /* Rich accent */
   font-size: 0.9rem;
-  color: #888;
+  color: white;
 }
